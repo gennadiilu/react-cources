@@ -2,6 +2,48 @@
 
 Training react project.
 
+# Setup
+
+## Install
+
+- Node JS
+- VS Code
+
+## VS Code extensions
+
+- dbaeumer.vscode-eslint
+- esbenp.prettier-vscode
+- jtlowe.vscode-icon-theme
+- VisualStudioExptTeam.vscodeintellicode
+
+## VS Code settings
+
+```javascript
+{
+  "editor.minimap.enabled": true,
+  "workbench.sideBar.location": "right",
+  "files.autoSave": "afterDelay",
+  "workbench.iconTheme": "vscode-icon-theme",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "prettier.eslintIntegration": true,
+  "typescript.validate.enable": false,
+  "typescript.format.enable": false,
+  "javascript.validate.enable": false,
+  "javascript.format.enable": false,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.rulers": [120],
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "terminal.integrated.rightClickBehavior": "default"
+}
+```
+
 # Training program
 
 ## Frontend Basics
