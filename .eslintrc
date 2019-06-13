@@ -10,5 +10,13 @@
     },
     "ecmaVersion": 2018,
     "sourceType": "module"
+  },
+  "rules": {
+    "no-debugger": "error",
+    "no-alert": "error",
+    "no-console": "error",
+    "react/display-name": ["error", { "ignoreTranspilerName": true }],
+    "react/prefer-stateless-function": "error",
+    "react/jsx-filename-extension": ["error", { "extensions": [".test.js", ".jsx"] }]
   }
 }

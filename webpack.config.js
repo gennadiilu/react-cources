@@ -7,15 +7,18 @@ const mode = (process || process.env.npm_lifecycle_script.match(/(?<=--mode\s+).
 
 module.exports = {
   mode,
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React Cources',
+      title: 'React Courses',
       inject: true,
       favicon: './src/favicon.png',
       template: './src/index.ejs'
