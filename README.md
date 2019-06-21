@@ -205,7 +205,7 @@ Training react project.
 ## Home Work
 
 Develop a simple shopping aplication using the above stack of libraries while learning:
-![Catalog](Docs/Page1.png)
-![Basket](Docs/Page2.png)
-![Order](Docs/Page3.png)
-![ThankYou](Docs/Page4.png)
+![Catalog](docs/Page1.png)
+![Basket](docs/Page2.png)
+![Order](docs/Page3.png)
+![ThankYou](docs/Page4.png)
