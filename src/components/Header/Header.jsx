@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const displayName = 'Header';
+
+const propTypes = {
+  name: PropTypes.string.isRequired
+};
+
 export default function Header({ name }) {
   return (
     <h1>
-Hello,
+      Hello,
       {name}
 !
     </h1>
-);
+  );
 }
 
-Header.displayName = 'Header';
-
-Header.propTypes = {
-  name: PropTypes.string.isRequired
-};
+Header.displayName = displayName;
+Header.propTypes = propTypes;
