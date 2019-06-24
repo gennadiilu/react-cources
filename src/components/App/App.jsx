@@ -1,9 +1,9 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Header from '../Header';
 import { ThemeContext, themes } from '../../themes';
-import Button from '../Button';
-import ToggleButton from '../ToggleButton';
+import Home from '../Home';
+import ReactJS from '../ReactJS';
 
 const displayName = 'App';
 
@@ -14,9 +14,12 @@ const propTypes = {
 export default function App({ theme }) {
   return (
     <ThemeContext.Provider value={themes[theme]}>
-      <Header name="React" />
-      <Button text="Click Me!" />
-      <ToggleButton text="Toggle Me!" />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/reactjs" component={ReactJS} />
+          <Route path="/:id" exact component={Home} />
+        </Switch>
+      </BrowserRouter>
     </ThemeContext.Provider>
   );
 }

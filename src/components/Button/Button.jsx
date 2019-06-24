@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../../themes';
 
@@ -38,4 +39,4 @@ Button.displayName = displayName;
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
 
-export default Button;
+export default withRouter(Button);
