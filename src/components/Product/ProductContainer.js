@@ -28,7 +28,7 @@ export const enhance = compose(
     }
   }),
   pure,
-  branch(({ userType }) => userType === 'vip', renderComponent(Product), renderComponent(Product2))
+  branch(({ userType }) => userType === 'vip', renderComponent(Product))
 );
 
-export default enhance();
+export default enhance(Product2);
