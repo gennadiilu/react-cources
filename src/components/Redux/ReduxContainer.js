@@ -1,30 +1,28 @@
-import {
-  compose,
-  withState,
-  withHandlers,
-  setDisplayName
-  // mapProps
-} from 'recompose';
+import { compose, withState, withHandlers, setDisplayName, mapProps } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import changeFilter from '../../actions/changeFilter';
 import getFilter from '../../selectors/getFilter';
 import Redux from './Redux';
+import addProduct from '../../actions/addProduct';
+import removeProduct from '../../actions/removeProduct';
+import fetchProducts from '../../actions/fetchProducts';
+import getProducts from '../../selectors/getProducts';
 
 export const enhance = compose(
   setDisplayName('ReduxContainer'),
   connect(
     state => ({
-      // myProducts: getProducts (state),
+      myProducts: getProducts(state),
       filter: getFilter(state)
     }),
     dispatch =>
       bindActionCreators(
         {
-          dispatchChangeFilter: changeFilter
-          // dispatchAddProduct: addProduct,
-          // dispatchRemoveProduct: removeProduct,
-          // dispatchFetchProducts: fetchProducts,
+          dispatchChangeFilter: changeFilter,
+          dispatchAddProduct: addProduct,
+          dispatchRemoveProduct: removeProduct,
+          dispatchFetchProducts: fetchProducts
         },
         dispatch
       )
@@ -46,11 +44,11 @@ export const enhance = compose(
     handleChangeFilter: ({ dispatchChangeFilter }) => ({ currentTarget: { value } }) => {
       dispatchChangeFilter(value);
     }
-  })
-  //   mapProps (props => ({
-  //     ...props,
-  //     myProducts: props.myProducts.toJS (),
-  //   }))
+  }),
+  mapProps(props => ({
+    ...props,
+    myProducts: props.myProducts.toJS()
+  }))
 );
 
 export default enhance(Redux);

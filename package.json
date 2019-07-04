@@ -10,7 +10,9 @@
   "repository": "https://github.com/gennadiilu/react-cources.git",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development",
+    "start": "npm-run-all --parallel start:mockserver start:app",
+    "start:app": "webpack-dev-server --mode development",
+    "start:mockserver": "node mockServer.js",
     "precommit": "lint-staged"
   },
   "sideEffects": false,
@@ -52,6 +54,7 @@
     "html-webpack-plugin": "3.2.0",
     "husky": "2.4.0",
     "lint-staged": "8.2.0",
+    "npm-run-all": "^4.1.5",
     "prettier-eslint-cli": "4.7.1",
     "webpack": "4.33.0",
     "webpack-cli": "3.3.3",
