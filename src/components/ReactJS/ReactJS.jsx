@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../Button';
 import ToggleButton from '../ToggleButton';
 import Product from '../Product';
+import { HeaderText } from '../Texts';
 
 const displayName = 'ReactJS';
 
@@ -13,6 +14,7 @@ const handleRemove = id => {
 function ReactJS() {
   return (
     <main>
+      <HeaderText>HEADER TEXT</HeaderText>
       <div>
         <div>
           <Button text="Button" value="button1" />

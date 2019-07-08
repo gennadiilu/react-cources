@@ -1,12 +1,13 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import store from '../../store';
-import { ThemeContext, themes } from '../../themes';
 import Home from '../Home';
 import ReactJS from '../ReactJS';
 import Redux from '../Redux';
+import themes from '../../themes';
 
 const displayName = 'App';
 
@@ -17,7 +18,7 @@ const propTypes = {
 export default function App({ theme }) {
   return (
     <Provider store={store}>
-      <ThemeContext.Provider value={themes[theme]}>
+      <ThemeProvider theme={themes[theme]}>
         <BrowserRouter>
           <Switch>
             <Route path="/reactjs" component={ReactJS} />
@@ -25,7 +26,7 @@ export default function App({ theme }) {
             <Route path="/:id" exact component={Home} />
           </Switch>
         </BrowserRouter>
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </Provider>
   );
 }

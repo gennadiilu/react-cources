@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../themes';
 
 const displayName = 'Button';
 
@@ -15,24 +15,16 @@ const defaultProps = {
   isActive: false
 };
 
-function Button({ text, isActive, ...rest }) {
-  return (
-    <ThemeContext.Consumer>
-      {value => (
-        <button
-          type="button"
-          {...rest}
-          style={{
-            borderStyle: isActive ? 'inset' : 'outset',
-            borderColor: value.borderColor,
-            borderRadius: value.borderRadius
-          }}
-        >
-          {text}
-        </button>
-      )}
-    </ThemeContext.Consumer>
-  );
+const StyledButton = styled.button.attrs({
+  type: 'button'
+})`
+  border-style: ${props => (props.isActive ? 'inset' : 'outset')};
+  border-color: ${({ theme }) => theme.borderColor};
+  border-radius: ${({ theme }) => theme.borderRadius};
+`;
+
+function Button({ text, ...rest }) {
+  return <StyledButton {...rest}>{text}</StyledButton>;
 }
 
 Button.displayName = displayName;
