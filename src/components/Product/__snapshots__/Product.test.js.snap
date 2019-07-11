@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the Product component when the component is rendered should match the snapshot 1`] = `
+<styled.div
+  data-qa="product-1"
+>
+  <styled.span>
+    Product 1
+  </styled.span>
+  <withRouter(Button)
+    onClick={[MockFunction]}
+    text="Remove"
+    value="removeProduct"
+  />
+</styled.div>
+`;

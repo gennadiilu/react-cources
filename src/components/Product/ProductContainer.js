@@ -2,16 +2,16 @@ import {
   compose,
   setDisplayName,
   withHandlers,
-  renderComponent,
+  //  renderComponent,
   setPropTypes,
   pure,
-  branch,
+  //  branch,
   withState,
   withProps
 } from 'recompose';
 import PropTypes from 'prop-types';
 import Product from './Product';
-import Product2 from './Product2';
+// import Product2 from './Product2';
 
 export const enhance = compose(
   setDisplayName('ProductContainer'),
@@ -27,8 +27,8 @@ export const enhance = compose(
       onRemove(id);
     }
   }),
-  pure,
-  branch(({ userType }) => userType === 'vip', renderComponent(Product))
+  pure
+  // branch(({ userType }) => userType === 'vip', renderComponent(Product))
 );
 
-export default enhance(Product2);
+export default enhance(Product);
