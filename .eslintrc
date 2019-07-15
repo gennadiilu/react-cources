@@ -2,7 +2,8 @@
   "extends": ["airbnb", "prettier"],
   "env": {
     "browser": true,
-    "jest": true
+    "jest": true,
+    "webdriverio/wdio": true
   },
   "parser": "babel-eslint",
   "parserOptions": {

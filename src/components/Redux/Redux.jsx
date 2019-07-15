@@ -38,9 +38,7 @@ function Redux({
   return (
     <main>
       <div>
-        Filter: 
-        {' '}
-        <input type="text" value={filter} onChange={handleChangeFilter} />
+        Filter: <input type="text" value={filter} onChange={handleChangeFilter} />
       </div>
       <div>
         {myProducts.map(product => (
@@ -52,7 +50,7 @@ function Redux({
         <Button text="Add Product" value="addProduct" onClick={handleAddProduct} />
       </div>
       <div>
-        <Button text="FETCH PRODUCTS" value="fetchProducts" onClick={handleFetchProducts} />
+        <Button data-qa="fetch-products" text="FETCH PRODUCTS" value="fetchProducts" onClick={handleFetchProducts} />
       </div>
     </main>
   );
