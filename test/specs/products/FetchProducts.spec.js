@@ -3,14 +3,14 @@ import Redux from '../../page-objects/Redux';
 describe('Given the Redux page is opened', () => {
   beforeEach(() => {
     Redux.open();
-    browser.waitForExist(Redux.buttonFetchProducts);
+    Redux.buttonFetchProducts.waitForExist();
   });
 
   describe('when the FetchProducts button is clicked', () => {
     beforeEach(() => {
       browser.pause(1000);
 
-      browser.click(Redux.buttonFetchProducts);
+      Redux.fetchProducts();
     });
 
     it('should load products from backend', () => {
@@ -18,7 +18,7 @@ describe('Given the Redux page is opened', () => {
 
       browser.saveScreenshot('./shots/fetchProducts.png');
 
-      expect(Redux.product(1)).toBeDefined();
+      expect(Redux.findProduct(1)).toBeDefined();
     });
   });
 });

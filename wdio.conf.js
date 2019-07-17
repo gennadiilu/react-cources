@@ -1,14 +1,5 @@
-require('@babel/register')({
-  plugins: [
-    [
-      'module-resolver',
-      {
-        root: ['./test']
-      }
-    ]
-  ]
-});
-const expect = require('expect');
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 
 // var debug = process.env.DEBUG;
 // var defaultCapabilities = ...;
@@ -124,6 +115,7 @@ exports.config = {
   // see also: http://webdriver.io/guide.html and click on "Reporters" in left column
   reporters: ['dot', 'spec'],
   before() {
-    global.expect = expect;
+    require('@babel/register');
+    global.expect = require('expect');
   }
 };

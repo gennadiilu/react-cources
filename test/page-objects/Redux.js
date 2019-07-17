@@ -4,15 +4,15 @@ class Redux {
   }
 
   static get buttonFetchProducts() {
-    return '[data-qa="fetch-products"]';
+    return $('[data-qa="fetch-products"]');
   }
 
   static fetchProducts() {
-    browser.click(this.buttonFetchProducts);
+    Redux.buttonFetchProducts.click();
   }
 
-  static product(id) {
-    return browser.element(`[data-qa="product-${id}"]`);
+  static findProduct(id) {
+    return $(`[data-qa="product-${id}"]`);
   }
 }
 

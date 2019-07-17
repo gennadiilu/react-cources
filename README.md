@@ -8,6 +8,7 @@ Training react project.
 
 - Node JS
 - VS Code
+- Java runtime
 
 ## VS Code extensions
 
